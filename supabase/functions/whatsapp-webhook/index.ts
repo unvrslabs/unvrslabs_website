@@ -94,36 +94,8 @@ serve(async (req) => {
           }
         };
 
-        console.log('[WhatsApp Webhook] Forwarding to UNVRS.BRAIN:', JSON.stringify(brainPayload));
-
-        // Call UNVRS.BRAIN edge function
-        const brainResponse = await fetch(`${supabaseUrl}/functions/v1/unvrs-brain`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${supabaseServiceKey}`
-          },
-          body: JSON.stringify(brainPayload)
-        });
-
-        const brainResult = await brainResponse.json();
-        console.log('[WhatsApp Webhook] UNVRS.BRAIN response:', JSON.stringify(brainResult));
-
-        // If BRAIN generated a response, send it back via WhatsApp
-        if (brainResult.success && brainResult.response) {
-          // For voice messages, prefer voice reply but fallback to text if TTS fails
-          if (messageContent.type === 'voice') {
-            if (brainResult.response_type === 'audio' && brainResult.audio_url) {
-              await sendWhatsAppAudio(normalizedPhone, brainResult.audio_url);
-            } else {
-              console.warn('[WhatsApp Webhook] Voice message received but no audio_url in BRAIN response, sending text reply instead');
-              await sendWhatsAppResponse(supabase, normalizedPhone, brainResult.response);
-            }
-          } else {
-            // For text (and other non-voice) messages, reply with text only
-            await sendWhatsAppResponse(supabase, normalizedPhone, brainResult.response);
-          }
-        }
+        // AGENT RESPONSES DISABLED - Only log and store messages, no automatic replies
+        console.log('[WhatsApp Webhook] Agent responses DISABLED. Message logged but not forwarded to UNVRS.BRAIN:', JSON.stringify(brainPayload));
 
         // Also maintain backward compatibility - store in whatsapp_messages if it's an existing client
         await storeMessageForLegacySystem(supabase, normalizedPhone, messageContent.text || '[Media message]');
