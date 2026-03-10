@@ -189,7 +189,6 @@ export function DashboardSidebar({ collapsed, setCollapsed }: Props) {
           ]
         },
         { id: "admin-demo-calendar", label: "Demo Calendar", icon: Calendar, href: "/admin/demo-calendar" },
-        { id: "admin-demo-calendar", label: "Demo Calendar", icon: Calendar, href: "/admin/demo-calendar" },
       ],
     });
 
