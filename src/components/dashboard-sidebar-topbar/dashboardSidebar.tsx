@@ -24,7 +24,6 @@ import {
   Cpu,
   CreditCard,
   FileText,
-  FolderCog,
   FlaskConical,
   Gauge,
   Home,
@@ -40,7 +39,6 @@ import {
   Send,
   Settings,
   Shield,
-  Store,
   Upload,
   User,
   Users,
@@ -169,15 +167,7 @@ export function DashboardSidebar({ collapsed, setCollapsed }: Props) {
   // Build menu sections
   const menuSections: MenuSection[] = [];
 
-  // Main items for all users - Search is separate with notifications
-  const topItems: MenuItem[] = [
-    { id: "marketplace", label: "Marketplace", icon: Store, href: "/marketplace" },
-    { id: "wallet", label: "Wallet", icon: Wallet, href: "/wallet" },
-  ];
-
-  menuSections.push({
-    items: topItems,
-  });
+  // No top-level items needed anymore
 
   // Admin section - only for owner
   if (isOwner) {
@@ -198,7 +188,6 @@ export function DashboardSidebar({ collapsed, setCollapsed }: Props) {
             { id: "finance-payments", label: "Payments", icon: Send, href: "/admin/finance/payments" },
           ]
         },
-        { id: "admin-projects", label: "Project Management", icon: FolderCog, href: "/admin/projects" },
         { id: "admin-demo-calendar", label: "Demo Calendar", icon: Calendar, href: "/admin/demo-calendar" },
       ],
     });
