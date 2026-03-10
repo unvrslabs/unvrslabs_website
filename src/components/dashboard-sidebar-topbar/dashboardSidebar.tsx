@@ -190,7 +190,7 @@ export function DashboardSidebar({ collapsed, setCollapsed }: Props) {
             { id: "finance-payments", label: "Payments", icon: Send, href: "/admin/finance/payments" },
           ]
         },
-        { id: "admin-projects", label: "Project Management", icon: FolderCog, href: "/admin/projects" },
+        { id: "admin-demo-calendar", label: "Demo Calendar", icon: Calendar, href: "/admin/demo-calendar" },
         { id: "admin-demo-calendar", label: "Demo Calendar", icon: Calendar, href: "/admin/demo-calendar" },
       ],
     });
