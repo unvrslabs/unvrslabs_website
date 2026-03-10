@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
+import { openclawSupabase } from "@/integrations/supabase/openclaw-client";
 import { useAuth } from "@/hooks/use-auth";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
@@ -120,12 +121,11 @@ const ChatTab = ({ userId }: { userId: string }) => {
   const queryClient = useQueryClient();
 
   const { data: conversations = [], isLoading } = useQuery({
-    queryKey: ["openclaw-conversations", userId],
+    queryKey: ["openclaw-conversations"],
     queryFn: async () => {
-      const { data } = await supabase
-        .from("unvrs_conversations")
+      const { data } = await openclawSupabase
+        .from("openclaw_conversations")
         .select("*")
-        .eq("user_id", userId)
         .order("last_message_at", { ascending: false });
       return (data ?? []) as Conversation[];
     },
@@ -136,8 +136,8 @@ const ChatTab = ({ userId }: { userId: string }) => {
     queryKey: ["openclaw-messages", selectedId],
     queryFn: async () => {
       if (!selectedId) return [];
-      const { data } = await supabase
-        .from("unvrs_messages")
+      const { data } = await openclawSupabase
+        .from("openclaw_messages")
         .select("*")
         .eq("conversation_id", selectedId)
         .order("created_at", { ascending: true });
@@ -149,18 +149,18 @@ const ChatTab = ({ userId }: { userId: string }) => {
 
   // Real-time subscription
   useEffect(() => {
-    const channel = supabase
+    const channel = openclawSupabase
       .channel("openclaw-messages-realtime")
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "unvrs_messages" }, () => {
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "openclaw_messages" }, () => {
         queryClient.invalidateQueries({ queryKey: ["openclaw-messages", selectedId] });
-        queryClient.invalidateQueries({ queryKey: ["openclaw-conversations", userId] });
+        queryClient.invalidateQueries({ queryKey: ["openclaw-conversations"] });
       })
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "unvrs_conversations" }, () => {
-        queryClient.invalidateQueries({ queryKey: ["openclaw-conversations", userId] });
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "openclaw_conversations" }, () => {
+        queryClient.invalidateQueries({ queryKey: ["openclaw-conversations"] });
       })
       .subscribe();
-    return () => { supabase.removeChannel(channel); };
-  }, [selectedId, userId, queryClient]);
+    return () => { openclawSupabase.removeChannel(channel); };
+  }, [selectedId, queryClient]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -288,12 +288,11 @@ const LeadsTab = ({ userId }: { userId: string }) => {
   const [filter, setFilter] = useState<string>("all");
 
   const { data: leads = [], isLoading, refetch } = useQuery({
-    queryKey: ["openclaw-leads", userId, filter],
+    queryKey: ["openclaw-leads", filter],
     queryFn: async () => {
-      let query = supabase
-        .from("unvrs_leads")
+      let query = openclawSupabase
+        .from("openclaw_leads")
         .select("*")
-        .eq("user_id", userId)
         .order("created_at", { ascending: false });
       if (filter !== "all") query = query.eq("status", filter);
       const { data } = await query;
@@ -430,12 +429,11 @@ const ImagesTab = ({ userId }: { userId: string }) => {
   const [selected, setSelected] = useState<AiContent | null>(null);
 
   const { data: images = [], isLoading, refetch } = useQuery({
-    queryKey: ["openclaw-images", userId],
+    queryKey: ["openclaw-images"],
     queryFn: async () => {
-      const { data } = await supabase
-        .from("ai_social_content")
+      const { data } = await openclawSupabase
+        .from("openclaw_images")
         .select("*")
-        .eq("user_id", userId)
         .order("created_at", { ascending: false })
         .limit(100);
       return (data ?? []) as AiContent[];
@@ -734,24 +732,20 @@ export default function OpenClawDashboard() {
   }, [searchParams]);
 
   const { data: stats } = useQuery({
-    queryKey: ["openclaw-stats", userId],
+    queryKey: ["openclaw-stats"],
     queryFn: async () => {
-      if (!userId) return null;
       const [conv, leads, imgs] = await Promise.all([
-        supabase
-          .from("unvrs_conversations")
+        openclawSupabase
+          .from("openclaw_conversations")
           .select("*", { count: "exact", head: true })
-          .eq("user_id", userId)
           .eq("status", "active"),
-        supabase
-          .from("unvrs_leads")
+        openclawSupabase
+          .from("openclaw_leads")
           .select("*", { count: "exact", head: true })
-          .eq("user_id", userId)
           .eq("status", "new"),
-        supabase
-          .from("ai_social_content")
+        openclawSupabase
+          .from("openclaw_images")
           .select("*", { count: "exact", head: true })
-          .eq("user_id", userId)
           .eq("status", "completed"),
       ]);
       return {
@@ -760,7 +754,6 @@ export default function OpenClawDashboard() {
         totalImages: imgs.count ?? 0,
       };
     },
-    enabled: !!userId,
     refetchInterval: 30000,
   });
 
