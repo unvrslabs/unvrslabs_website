@@ -24,7 +24,6 @@ import {
   Cpu,
   CreditCard,
   FileText,
-  
   FlaskConical,
   Gauge,
   Home,
@@ -40,7 +39,8 @@ import {
   Send,
   Settings,
   Shield,
-  Wallet,
+  Upload,
+  User,
   Users,
   Video,
   Wallet,
