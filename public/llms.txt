@@ -1,0 +1,41 @@
+# UNVRS LABS
+
+> AI-first technology studio based in Paphos, Cyprus. We design, build, and deploy AI-powered software for businesses.
+
+## What We Do
+
+UNVRS LABS builds AI-integrated software solutions for companies that want to automate operations, scale without increasing headcount, and leverage artificial intelligence as a core business advantage.
+
+We specialize in:
+- AI Integration (LLM orchestration, multi-agent systems, RAG pipelines)
+- Custom Enterprise Software (web, mobile, cloud)
+- AI-Powered Platforms (autonomous business operations)
+- Digital Transformation Consulting
+
+## Our Products
+
+### Energizzo
+AI-native platform for energy resellers in Italy. Automates ARERA-compliant billing, OCR onboarding in 60 seconds, AI phone system 24/7, churn prediction, and regulatory compliance. Built with Laravel, React, Claude AI.
+Website: https://www.energizzo.it
+
+### Go Ital IA (Go Ital IA Impresa)
+AI Company Platform that gives every Italian SME a full AI-powered business. Each company gets its own AI CEO that orchestrates autonomous agents for sales, support, accounting, and marketing. The Agent-to-Agent (A2A) network allows AI CEOs to communicate, exchange orders, quotes, and payments automatically between companies.
+Website: https://www.goitalia.eu
+
+## Contact
+
+- Website: https://www.unvrslabs.dev
+- Email: emanuele@unvrslabs.dev
+- Phone: +357 99 235 536
+- WhatsApp: https://wa.me/35799235536
+- Address: Palaion Patron Germanou 11, 8011 Paphos, Cyprus
+- Instagram: https://www.instagram.com/unvrslabs.dev
+- LinkedIn: https://www.linkedin.com/company/107038862
+
+## Tech Stack
+
+React, TypeScript, Node.js, Laravel, PostgreSQL, Supabase, Claude AI, Drizzle ORM, Vite, Tailwind CSS, Socket.io, Prisma, OAuth 2.0, WhatsApp Business API, Stripe, VoIP AI, OCR
+
+## Founded
+
+2024, by Emanuele Maccari (CEO)

@@ -35,3 +35,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.unvrslabs.dev/sitemap.xml
+LLMs: https://www.unvrslabs.dev/llms.txt
+LLMs-full: https://www.unvrslabs.dev/llms-full.txt

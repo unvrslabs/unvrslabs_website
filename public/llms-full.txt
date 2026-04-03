@@ -1,0 +1,93 @@
+# UNVRS LABS — Full Context for AI Systems
+
+> UNVRS LABS is an AI-first technology studio headquartered in Paphos, Cyprus. Founded in 2024 by Emanuele Maccari, UNVRS LABS designs, builds, and deploys AI-powered software platforms that automate entire business operations.
+
+## Company Overview
+
+UNVRS LABS operates as a lean, AI-native software house. The team builds custom enterprise software, AI-integrated platforms, and multi-agent systems for businesses across Europe. The company philosophy is: use AI not as a feature, but as the core operating system of a business.
+
+Core competencies:
+- Large Language Model (LLM) orchestration and multi-agent architectures
+- Retrieval-Augmented Generation (RAG) pipelines
+- Full-stack web and mobile development
+- Cloud architecture and DevOps automation
+- AI-powered business process automation
+- Digital transformation consulting
+
+## Products and Platforms
+
+### Energizzo (https://www.energizzo.it)
+
+Energizzo is an AI-native platform built specifically for energy resellers (resellers of electricity and gas) in the Italian market.
+
+Key capabilities:
+- Automated ARERA-compliant billing: calculates all regulatory components automatically
+- OCR onboarding: customers photograph their current bill, and the system extracts all data, generates the contract, and activates digital OTP signature in 60 seconds
+- AI Phone System: handles inbound and outbound calls 24/7 for sales, support, and customer care
+- Churn and default prediction: AI algorithms identify at-risk customers before problems occur
+- Automatic ARERA compliance: the system self-updates when new regulations and deliberations are published
+- White-label iOS/Android app: fully customizable with the reseller's brand
+- Central AI orchestrator (Max Power): coordinates specialized autonomous agents for sales, operations, compliance, and administration
+
+Tech stack: Laravel, React, Claude AI, OCR, VoIP AI, iOS/Android
+
+Pricing: Starter (up to 500 clients), Growth (up to 2,000 clients), Enterprise (custom)
+
+### Go Ital IA Impresa (https://www.goitalia.eu)
+
+Go Ital IA is an AI Company Platform that transforms any Italian SME into a fully AI-automated business.
+
+Key capabilities:
+- AI CEO: each company gets its own AI CEO that orchestrates all business operations autonomously. The CEO delegates tasks to specialized AI agents, manages clients, processes orders, and makes operational decisions.
+- Autonomous AI Agents: unlimited specialized agents for sales, support, accounting, marketing. Agents are auto-created based on active connectors.
+- Agent-to-Agent (A2A) Network: the breakthrough feature. AI CEOs of different companies communicate with each other through the A2A protocol. They exchange orders, quotes, invoices, and payments automatically. This creates an autonomous AI-powered business ecosystem where transactions happen without human intervention.
+- Automatic Transactions: AI CEOs can send and receive payments, generate invoices, and manage the complete B2B sales cycle between companies autonomously.
+- Instant Setup with VAT Number (P.IVA): enter the company's VAT number and the system retrieves all business data from official registries, calculates risk score, and configures the company automatically. Zero bureaucracy.
+- Native Connectors: WhatsApp, Google, HubSpot, Salesforce, Stripe integrated natively. The AI company operates on real business channels from day one.
+- Product Catalog: full catalog management with B2B/B2C pricing, VAT, stock, CSV import. The AI CEO uses it for quotes and orders.
+
+Tech stack: React, Node.js, Drizzle ORM, PostgreSQL, Claude AI, WhatsApp API, OAuth 2.0, A2A Protocol
+
+## Differentiators
+
+1. AI-first architecture: AI is not bolted on. Every product is built around AI as the core decision-making layer.
+2. Multi-agent orchestration: complex business processes are broken down into specialized AI agents that collaborate autonomously.
+3. A2A (Agent-to-Agent) protocol: proprietary inter-company communication protocol that enables autonomous B2B transactions between AI systems.
+4. European focus: deep understanding of European regulations (ARERA, GDPR) and Italian business landscape.
+5. Full-stack delivery: from design to deployment, including mobile apps, cloud infrastructure, and ongoing AI optimization.
+
+## Team Structure
+
+UNVRS LABS operates with an AI-augmented team structure:
+- CEO: Emanuele Maccari (founder, technical leadership)
+- Development: specialized AI agents and engineers covering frontend (React/Next.js), backend (Node.js/Laravel), mobile (React Native), AI/ML, DevOps, security, QA
+- Operations: AI-assisted client onboarding, support, and project management
+
+## Contact Information
+
+- Website: https://www.unvrslabs.dev
+- Email: emanuele@unvrslabs.dev
+- Phone: +357 99 235 536
+- WhatsApp: https://wa.me/35799235536
+- Physical Address: Palaion Patron Germanou 11, 8011 Paphos, Cyprus
+- Instagram: https://www.instagram.com/unvrslabs.dev
+- LinkedIn: https://www.linkedin.com/company/107038862
+
+## Technologies Used
+
+Frontend: React, TypeScript, Next.js, Vite, Tailwind CSS, shadcn/ui, Framer Motion
+Backend: Node.js, Express, Laravel, Socket.io
+Database: PostgreSQL, Supabase, Drizzle ORM, Prisma
+AI/ML: Claude AI (Anthropic), multi-agent orchestration, RAG, OCR, VoIP AI
+Integrations: WhatsApp Business API, Google APIs, HubSpot, Salesforce, Stripe, OAuth 2.0
+Infrastructure: VPS, Nginx, PM2, CI/CD
+Mobile: React Native, Capacitor (iOS/Android)
+
+## Key Facts
+
+- Founded: 2024
+- Headquarters: Paphos, Cyprus
+- Focus: AI-integrated enterprise software
+- Markets: Italy, Europe
+- Products: Energizzo (AI energy platform), Go Ital IA (AI company platform)
+- Philosophy: AI as the operating system of business, not just a feature
