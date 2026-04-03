@@ -28,58 +28,58 @@ interface FlagshipProject {
   stats: { label: string; value: string }[];
 }
 
-// Dati del progetto Energizzo (placeholder - da sostituire con dati reali)
+// Flagship projects data
 const projects: FlagshipProject[] = [
   {
     id: "energizzo",
     name: "Energizzo",
-    tagline: "Piattaforma AI per Reseller Energia",
-    description: "La piattaforma AI-native per reseller di energia elettrica e gas in Italia. Automatizza fatturazione, onboarding, compliance e CRM.",
+    tagline: "AI Platform for Energy Resellers",
+    description: "The AI-native platform for electricity and gas resellers in Italy. Automates billing, onboarding, regulatory compliance and CRM.",
     heroImage: "/images/energizzo-hero.jpg",
     status: "Active",
     year: "2026",
     features: [
       {
         icon: <Zap className="w-6 h-6" />,
-        title: "Fatturazione AI Automatica ARERA",
-        description: "Calcolo automatico di tutte le componenti normative. Fatture generate in conformità ARERA senza intervento manuale.",
+        title: "AI-Powered ARERA Billing",
+        description: "Automatic calculation of all regulatory components. Invoices generated in full ARERA compliance with zero manual intervention.",
       },
       {
         icon: <Bot className="w-6 h-6" />,
-        title: "Onboarding OCR in 60 Secondi",
-        description: "Il cliente scatta una foto alla bolletta e il sistema estrae tutti i dati, genera il contratto e attiva la firma digitale OTP.",
+        title: "OCR Onboarding in 60 Seconds",
+        description: "The customer photographs their bill and the system extracts all data, generates the contract and activates digital OTP signature.",
       },
       {
         icon: <Brain className="w-6 h-6" />,
-        title: "Telefono AI 24/7",
-        description: "Gestione chiamate inbound e outbound con intelligenza artificiale. Vendita, supporto e customer care sempre attivi.",
+        title: "AI Phone System 24/7",
+        description: "Inbound and outbound call management powered by AI. Sales, support and customer care always active.",
       },
       {
         icon: <BarChart3 className="w-6 h-6" />,
-        title: "Predizione Churn e Morosità",
-        description: "Algoritmi predittivi che identificano i clienti a rischio abbandono e morosità prima che il problema si presenti.",
+        title: "Churn & Default Prediction",
+        description: "Predictive algorithms that identify at-risk customers before the problem occurs.",
       },
       {
         icon: <ScrollText className="w-6 h-6" />,
-        title: "Compliance ARERA Automatica",
-        description: "Il sistema si aggiorna autonomamente alle nuove delibere e normative. La compliance evolve insieme alle regole.",
+        title: "Automatic ARERA Compliance",
+        description: "The system self-updates with new regulations and deliberations. Compliance evolves alongside the rules.",
       },
       {
         icon: <Shield className="w-6 h-6" />,
-        title: "App White Label iOS/Android",
-        description: "App completamente personalizzabile con il brand del reseller. Firma digitale OTP integrata per contratti digitali.",
+        title: "White Label App iOS/Android",
+        description: "Fully customizable app with the reseller's brand. Integrated digital OTP signature for digital contracts.",
       },
     ],
     gallery: [
       { src: "/images/energizzo-dashboard.png", alt: "Dashboard Energizzo" },
-      { src: "/images/energizzo-clienti.png", alt: "Clienti Attivi Energizzo" },
+      { src: "/images/energizzo-clienti.png", alt: "Energizzo Active Clients" },
       { src: "/images/energizzo-livecall.png", alt: "AI Live Call Energizzo" },
     ],
     technologies: ["Laravel", "React", "Claude AI", "OCR", "VoIP AI", "iOS/Android"],
     stats: [
       { label: "Onboarding", value: "60s" },
-      { label: "Automazione", value: "100%" },
-      { label: "Disponibilità", value: "24/7" },
+      { label: "Automation", value: "100%" },
+      { label: "Availability", value: "24/7" },
     ],
   },
 ];
@@ -174,25 +174,25 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
               className="text-lg md:text-xl font-bold text-lime-400 mb-6"
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
-              Piattaforma AI per Reseller Energia
+              AI Platform for Energy Resellers
             </h4>
             <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Energizzo</span> è la piattaforma AI-native per reseller di energia elettrica e gas in Italia.
-                Permette di gestire migliaia di clienti senza aumentare il personale, automatizzando fatturazione, onboarding, compliance normativa e CRM.
+                <span className="text-white font-semibold">Energizzo</span> is the AI-native platform for electricity and gas resellers in Italy.
+                It enables managing thousands of clients without increasing headcount, automating billing, onboarding, regulatory compliance and CRM.
               </p>
               <p>
-                Un cliente scatta una foto alla bolletta e in 60 secondi il sistema estrae i dati, genera il contratto e attiva la firma digitale OTP.
-                Il telefono AI gestisce chiamate inbound e outbound 24/7 per vendita, supporto e customer care.
+                A customer photographs their bill and in 60 seconds the system extracts the data, generates the contract and activates digital OTP signature.
+                The AI phone system handles inbound and outbound calls 24/7 for sales, support and customer care.
               </p>
               <p>
-                Al centro del sistema opera <span className="text-lime-400 font-semibold">Max Power</span>, il CEO AI di Energizzo:
-                coordina agenti autonomi specializzati in vendite, operations, compliance e amministrazione.
-                Il sistema si aggiorna automaticamente alle nuove delibere ARERA.
+                At the core of the system operates <span className="text-lime-400 font-semibold">Max Power</span>, Energizzo's AI CEO:
+                it coordinates autonomous agents specialized in sales, operations, compliance and administration.
+                The system self-updates with every new ARERA regulation.
               </p>
               <p className="text-white/90 italic mt-4">
-                Non un gestionale.<br />
-                L'AI che gestisce il tuo business energetico.
+                Not a management tool.<br />
+                The AI that runs your energy business.
               </p>
             </div>
           </div>
@@ -243,7 +243,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                 border: "1px solid rgba(132, 204, 22, 0.5)",
               }}
             >
-              Richiedi una demo
+              Request a Demo
             </motion.a>
           </div>
         </div>
@@ -258,7 +258,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
               className="text-sm tracking-[0.1em]"
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
-              {isExpanded ? "NASCONDI DETTAGLI" : "SCOPRI DI PIÙ"}
+              {isExpanded ? "HIDE DETAILS" : "LEARN MORE"}
             </span>
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -407,7 +407,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                         Max Power
                       </h5>
                       <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Central Intelligence Core</p>
-                      <p className="text-white/70 text-sm">Il cervello che orchestra tutto.</p>
+                      <p className="text-white/70 text-sm">The brain that orchestrates everything.</p>
                     </div>
 
                     {/* Ignition */}
@@ -420,7 +420,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                         Ignition
                       </h5>
                       <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Onboarding Agent</p>
-                      <p className="text-white/60 text-sm leading-relaxed">Attiva il cliente, avvia il flusso, accende il sistema.</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Activates the client, starts the flow, powers up the system.</p>
                     </div>
 
                     {/* Switchboard */}
@@ -432,8 +432,8 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                       >
                         Switchboard
                       </h5>
-                      <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Centralino AI / Voice Agent</p>
-                      <p className="text-white/60 text-sm leading-relaxed">Gestisce chiamate, instrada richieste, parla con clienti e operatori.</p>
+                      <p className="text-white/50 text-xs uppercase tracking-widest mb-2">AI Switchboard / Voice Agent</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Manages calls, routes requests, talks to clients and operators.</p>
                     </div>
 
                     {/* Halo */}
@@ -446,7 +446,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                         Halo
                       </h5>
                       <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Personal AI Agent (HLO)</p>
-                      <p className="text-white/60 text-sm leading-relaxed">L'agente personale di ogni cliente. Conosce dati, contratti, storico.</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Each client's personal AI agent. Knows their data, contracts, history.</p>
                     </div>
 
                     {/* Ledger */}
@@ -459,7 +459,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                         Ledger
                       </h5>
                       <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Billing & Invoicing Agent</p>
-                      <p className="text-white/60 text-sm leading-relaxed">Fatture, note di credito, insoluti, riconciliazioni.</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Invoices, credit notes, overdue payments, reconciliations.</p>
                     </div>
 
                     {/* Gridmind */}
@@ -472,7 +472,7 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                         Gridmind
                       </h5>
                       <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Dispatching Agent</p>
-                      <p className="text-white/60 text-sm leading-relaxed">Intelligenza dedicata al dispacciamento energetico.</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Dedicated intelligence for energy dispatching.</p>
                     </div>
 
                     {/* Oracle */}
@@ -484,8 +484,8 @@ function ProjectCard({ project }: { project: FlagshipProject }) {
                       >
                         Oracle
                       </h5>
-                      <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Regulatory & Delibere Agent</p>
-                      <p className="text-white/60 text-sm leading-relaxed">Riceve, interpreta e traduce delibere e normative.</p>
+                      <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Regulatory & Compliance Agent</p>
+                      <p className="text-white/60 text-sm leading-relaxed">Receives, interprets and translates regulations and deliberations.</p>
                     </div>
                   </div>
                 </div>
@@ -573,33 +573,33 @@ function GoItalIACard() {
   const features = [
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "CEO AI Orchestratore",
-      description: "Ogni azienda ha il proprio CEO AI che coordina agenti, delega task, gestisce clienti e prende decisioni operative in totale autonomia.",
+      title: "AI CEO Orchestrator",
+      description: "Every company gets its own AI CEO that coordinates agents, delegates tasks, manages clients and makes operational decisions in full autonomy.",
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Rete A2A (Agent-to-Agent)",
-      description: "I CEO AI si parlano tra loro attraverso la rete Agent-to-Agent. Possono scambiarsi ordini, preventivi, pagamenti e chiudere transazioni senza intervento umano.",
+      title: "A2A Network (Agent-to-Agent)",
+      description: "AI CEOs communicate through the Agent-to-Agent network. They exchange orders, quotes, payments and close transactions without human intervention.",
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Transazioni Automatiche",
-      description: "I CEO AI possono inviare e ricevere pagamenti, generare fatture e gestire il ciclo completo di vendita tra aziende in modo completamente autonomo.",
+      title: "Automatic Transactions",
+      description: "AI CEOs can send and receive payments, generate invoices and manage the complete B2B sales cycle between companies fully autonomously.",
     },
     {
       icon: <Bot className="w-6 h-6" />,
-      title: "Agenti Autonomi Illimitati",
-      description: "Vendite, supporto, contabilità, marketing. Ogni azienda genera automaticamente i propri agenti AI specializzati in base ai connettori attivi.",
+      title: "Unlimited Autonomous Agents",
+      description: "Sales, support, accounting, marketing. Every company automatically generates its own specialized AI agents based on active connectors.",
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Setup Istantaneo con P.IVA",
-      description: "Inserisci la Partita IVA e il sistema recupera tutti i dati aziendali, calcola il risk score e configura l'azienda in automatico. Zero burocrazia.",
+      title: "Instant Setup with VAT Number",
+      description: "Enter the VAT number and the system retrieves all company data, calculates the risk score and configures the business automatically. Zero bureaucracy.",
     },
     {
       icon: <ScrollText className="w-6 h-6" />,
-      title: "Connettori Nativi",
-      description: "WhatsApp, Google, HubSpot, Salesforce, Stripe integrati nativamente. L'azienda AI opera sui canali reali del business dal primo giorno.",
+      title: "Native Connectors",
+      description: "WhatsApp, Google, HubSpot, Salesforce, Stripe natively integrated. The AI company operates on real business channels from day one.",
     },
   ];
 
@@ -649,21 +649,21 @@ function GoItalIACard() {
             </h4>
             <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Go Ital IA</span> crea la tua azienda completamente AI e automatizzata.
-                Un CEO AI prende il controllo dell'operatività: gestisce clienti, vende, risponde, fattura e coordina un team di agenti AI specializzati.
+                <span className="text-white font-semibold">Go Ital IA</span> creates your fully AI-powered and automated company.
+                An AI CEO takes control of operations: manages clients, sells, responds, invoices and coordinates a team of specialized AI agents.
               </p>
               <p>
-                Il vero punto di forza è la <span className="text-cyan-400 font-semibold">rete A2A (Agent-to-Agent)</span>.
-                I CEO AI delle diverse aziende si parlano tra loro, si scambiano ordini, preventivi e pagamenti.
-                Un ecosistema economico dove le transazioni avvengono in autonomia, senza intervento umano.
+                The real breakthrough is the <span className="text-cyan-400 font-semibold">A2A (Agent-to-Agent) network</span>.
+                AI CEOs of different companies talk to each other, exchange orders, quotes and payments.
+                An economic ecosystem where transactions happen autonomously, without human intervention.
               </p>
               <p>
-                Inserisci la tua Partita IVA e in pochi minuti hai un'azienda AI operativa, connessa a WhatsApp, Google, CRM e sistemi di pagamento.
-                Pronta a vendere, comprare e collaborare con le altre aziende della rete.
+                Enter your VAT number and in minutes you have an operational AI company, connected to WhatsApp, Google, CRM and payment systems.
+                Ready to sell, buy and collaborate with other businesses on the network.
               </p>
               <p className="text-white/90 italic mt-4">
-                Non un gestionale.<br />
-                Un'economia artificiale che lavora per te.
+                Not a management tool.<br />
+                An AI economy that works for you.
               </p>
             </div>
           </div>
@@ -697,7 +697,7 @@ function GoItalIACard() {
               AI Company Platform
             </p>
             <p className="text-white/70 mb-6 leading-relaxed">
-              La tua azienda completamente AI. Un CEO AI, agenti autonomi e una rete dove i CEO AI si parlano, scambiano ordini e chiudono pagamenti.
+              Your fully AI-powered company. An AI CEO, autonomous agents and a network where AI CEOs talk, exchange orders and close payments.
             </p>
 
             <motion.a
@@ -713,7 +713,7 @@ function GoItalIACard() {
                 border: "1px solid rgba(34, 211, 238, 0.5)",
               }}
             >
-              Scopri Go Ital IA
+              Discover Go Ital IA
             </motion.a>
           </div>
         </div>
@@ -728,7 +728,7 @@ function GoItalIACard() {
               className="text-sm tracking-[0.1em]"
               style={{ fontFamily: "Orbitron, sans-serif" }}
             >
-              {isExpanded ? "NASCONDI DETTAGLI" : "SCOPRI DI PIÙ"}
+              {isExpanded ? "HIDE DETAILS" : "LEARN MORE"}
             </span>
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -831,9 +831,9 @@ function GoItalIACard() {
                     </h4>
                     <div className="flex gap-8">
                       {[
-                        { label: "Connettori", value: "8+" },
-                        { label: "Agenti AI", value: "∞" },
-                        { label: "Automazione", value: "100%" },
+                        { label: "Connectors", value: "8+" },
+                        { label: "AI Agents", value: "∞" },
+                        { label: "Automation", value: "100%" },
                       ].map((stat) => (
                         <div key={stat.label}>
                           <div
