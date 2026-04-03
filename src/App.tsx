@@ -1,6 +1,7 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import ThemeProvider from "./components/theme-provider";
 import Landing from "./pages/Landing";
 import NotFound from "./pages/NotFound";
@@ -12,6 +13,12 @@ import ArticleA2AProtocol from "./pages/insights/ArticleA2AProtocol";
 import ArticleAICEO from "./pages/insights/ArticleAICEO";
 import ArticleAIBusinessAutomation from "./pages/insights/ArticleAIBusinessAutomation";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -19,6 +26,7 @@ const App = () => (
     <ThemeProvider>
       <TooltipProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />

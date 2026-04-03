@@ -9,7 +9,7 @@ const insights = [
     title: "Energizzo: AI-Powered Energy Reselling",
     description: "How we built an AI-native platform that automates billing, onboarding, and compliance for energy resellers in Italy.",
     href: "/insights/energizzo",
-    color: "lime",
+    color: "cyan",
   },
   {
     type: "CASE STUDY",
