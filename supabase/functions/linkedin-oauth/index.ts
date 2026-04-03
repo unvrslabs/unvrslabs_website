@@ -97,10 +97,10 @@ async function handleCallback(url: URL) {
   try {
     const stateData = JSON.parse(atob(stateParam || ''));
     userId = stateData.user_id;
-    origin = stateData.origin || 'https://amvbkkbqkzklrcynpwwm.lovableproject.com';
+    origin = stateData.origin || 'https://www.unvrslabs.dev';
   } catch (e) {
     console.error('Failed to parse state:', e);
-    return redirectWithError('Invalid state parameter', 'https://amvbkkbqkzklrcynpwwm.lovableproject.com');
+    return redirectWithError('Invalid state parameter', 'https://www.unvrslabs.dev');
   }
 
   if (error) {

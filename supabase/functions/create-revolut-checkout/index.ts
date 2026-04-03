@@ -89,7 +89,7 @@ serve(async (req) => {
     });
 
     // Build the redirect URL for after payment
-    const successRedirectUrl = returnUrl || `${Deno.env.get("SUPABASE_URL")?.replace('.supabase.co', '.lovableproject.com')}/wallet`;
+    const successRedirectUrl = returnUrl || `https://www.unvrslabs.dev/wallet`;
 
     // Create Revolut order
     const orderResponse = await fetch(apiBase, {

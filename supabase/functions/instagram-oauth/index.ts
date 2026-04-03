@@ -174,7 +174,7 @@ Deno.serve(async (req) => {
       }
 
       // Redirect back to app with success
-      const redirectUrl = appOrigin || 'https://amvbkkbqkzklrcynpwwm.lovableproject.com'
+      const redirectUrl = appOrigin || 'https://www.unvrslabs.dev'
       return Response.redirect(`${redirectUrl}/ai-social/connection?success=true`, 302)
     }
 

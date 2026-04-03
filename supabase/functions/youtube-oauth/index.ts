@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
     if (error) {
       console.error('OAuth error from Google:', error);
       const stateData = state ? JSON.parse(decodeURIComponent(state)) : {};
-      const redirectUrl = `${stateData.origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?error=${encodeURIComponent(error)}`;
+      const redirectUrl = `${stateData.origin || 'https://www.unvrslabs.dev'}/ai-social/connection?error=${encodeURIComponent(error)}`;
       return Response.redirect(redirectUrl, 302);
     }
 
@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
       if (!tokenResponse.ok || tokenData.error) {
         console.error('Token exchange failed:', tokenData);
         const errorMsg = tokenData.error_description || tokenData.error || 'Token exchange failed';
-        const redirectUrl = `${origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?error=${encodeURIComponent(errorMsg)}`;
+        const redirectUrl = `${origin || 'https://www.unvrslabs.dev'}/ai-social/connection?error=${encodeURIComponent(errorMsg)}`;
         return Response.redirect(redirectUrl, 302);
       }
 
@@ -99,7 +99,7 @@ Deno.serve(async (req) => {
       if (!channelResponse.ok || !channelData.items || channelData.items.length === 0) {
         console.error('Failed to get channel info:', channelData);
         const errorMsg = 'No YouTube channel found for this account';
-        const redirectUrl = `${origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?error=${encodeURIComponent(errorMsg)}`;
+        const redirectUrl = `${origin || 'https://www.unvrslabs.dev'}/ai-social/connection?error=${encodeURIComponent(errorMsg)}`;
         return Response.redirect(redirectUrl, 302);
       }
 
@@ -140,7 +140,7 @@ Deno.serve(async (req) => {
 
         if (updateError) {
           console.error('Failed to update YouTube credentials:', updateError);
-          const redirectUrl = `${origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?error=${encodeURIComponent('Failed to save credentials')}`;
+          const redirectUrl = `${origin || 'https://www.unvrslabs.dev'}/ai-social/connection?error=${encodeURIComponent('Failed to save credentials')}`;
           return Response.redirect(redirectUrl, 302);
         }
       } else {
@@ -156,13 +156,13 @@ Deno.serve(async (req) => {
 
         if (insertError) {
           console.error('Failed to save YouTube credentials:', insertError);
-          const redirectUrl = `${origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?error=${encodeURIComponent('Failed to save credentials')}`;
+          const redirectUrl = `${origin || 'https://www.unvrslabs.dev'}/ai-social/connection?error=${encodeURIComponent('Failed to save credentials')}`;
           return Response.redirect(redirectUrl, 302);
         }
       }
 
       console.log('YouTube credentials saved successfully');
-      const successUrl = `${origin || 'https://preview--amvbkkbqkzklrcynpwwm.lovable.app'}/ai-social/connection?youtube_success=true&channel=${encodeURIComponent(channelTitle)}`;
+      const successUrl = `${origin || 'https://www.unvrslabs.dev'}/ai-social/connection?youtube_success=true&channel=${encodeURIComponent(channelTitle)}`;
       return Response.redirect(successUrl, 302);
     }
 

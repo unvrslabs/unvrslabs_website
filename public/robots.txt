@@ -34,4 +34,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://unvrsmagic.lovable.app/sitemap.xml
+Sitemap: https://www.unvrslabs.dev/sitemap.xml

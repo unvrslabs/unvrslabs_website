@@ -1,13 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.7ecba86ffec947269ec40c8ba9b77b43',
-  appName: 'unvrsmagic',
+  appId: 'dev.unvrslabs.app',
+  appName: 'UNVRS LABS',
   webDir: 'dist',
-  server: {
-    url: 'https://7ecba86f-fec9-4726-9ec4-0c8ba9b77b43.lovableproject.com?forceHideBadge=true',
-    cleartext: true
-  },
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,

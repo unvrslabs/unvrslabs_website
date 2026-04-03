@@ -123,7 +123,7 @@ serve(async (req) => {
 
 function getAppUrl(): string {
   // Return the app URL based on environment
-  return Deno.env.get('APP_URL') || 'https://7ecba86f-fec9-4726-9ec4-0c8ba9b77b43.lovableproject.com'
+  return Deno.env.get('APP_URL') || 'https://www.unvrslabs.dev'
 }
 
 async function createClientAssertionJWT(clientId: string, privateKeyPem: string): Promise<string> {

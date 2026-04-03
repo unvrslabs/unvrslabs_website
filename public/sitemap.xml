@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://unvrsmagic.lovable.app/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://www.unvrslabs.dev/</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://unvrsmagic.lovable.app/privacy-policy</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://www.unvrslabs.dev/privacy</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://unvrsmagic.lovable.app/terms-of-service</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://www.unvrslabs.dev/terms</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
