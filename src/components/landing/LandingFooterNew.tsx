@@ -87,6 +87,13 @@ export function LandingFooterNew() {
                 GET IN TOUCH
               </h3>
               <div className="flex flex-col gap-3">
+                <p className="text-white/60 text-sm leading-relaxed" style={{ fontFamily: "Orbitron, sans-serif" }}>
+                  Palaion Patron Germanou, 11<br />
+                  8011, Paphos, Cyprus
+                </p>
+                <a href="tel:+35799235536" className="text-white/60 hover:text-white transition-colors text-sm" style={{ fontFamily: "Orbitron, sans-serif" }}>
+                  +357 99 235 536
+                </a>
                 <a href="mailto:emanuele@unvrslabs.dev" className="text-white/60 hover:text-white transition-colors text-sm" style={{ fontFamily: "Orbitron, sans-serif" }}>
                   emanuele@unvrslabs.dev
                 </a>
