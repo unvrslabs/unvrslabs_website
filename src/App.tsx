@@ -6,6 +6,11 @@ import Landing from "./pages/Landing";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import CaseStudyEnergizzo from "./pages/insights/CaseStudyEnergizzo";
+import CaseStudyGoItalIA from "./pages/insights/CaseStudyGoItalIA";
+import ArticleA2AProtocol from "./pages/insights/ArticleA2AProtocol";
+import ArticleAICEO from "./pages/insights/ArticleAICEO";
+import ArticleAIBusinessAutomation from "./pages/insights/ArticleAIBusinessAutomation";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +25,12 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            {/* Insights: Case Studies & Articles */}
+            <Route path="/insights/energizzo" element={<CaseStudyEnergizzo />} />
+            <Route path="/insights/goitalia" element={<CaseStudyGoItalIA />} />
+            <Route path="/insights/a2a-protocol" element={<ArticleA2AProtocol />} />
+            <Route path="/insights/ai-ceo-orchestration" element={<ArticleAICEO />} />
+            <Route path="/insights/ai-business-automation" element={<ArticleAIBusinessAutomation />} />
             {/* All old routes redirect to home */}
             <Route path="/auth" element={<Navigate to="/" replace />} />
             <Route path="/dashboard" element={<Navigate to="/" replace />} />
