@@ -21,7 +21,7 @@ export function LandingNav({ showBack = false, backTo }: LandingNavProps) {
     { label: "SERVICES", href: "#services", sectionId: "services" },
     { label: "MAGIC AI", href: "#works", sectionId: "works" },
     { label: "FOUNDATIONS", href: "#foundations", sectionId: "foundations" },
-    { label: "CONTACT", href: "https://wa.me/34625976744", external: true },
+    { label: "CONTACT", href: "https://wa.me/35799235536", external: true },
   ];
 
   // Scroll spy - track which section is in view

@@ -48,7 +48,7 @@ export function LandingCTANew() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <a
-                href="https://wa.me/34625976744"
+                href="https://wa.me/35799235536"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="liquid-glass-btn inline-flex items-center gap-3 px-10 py-4 text-white font-semibold tracking-wider group"
