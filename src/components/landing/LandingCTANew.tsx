@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
 export function LandingCTANew() {
@@ -48,14 +47,16 @@ export function LandingCTANew() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Link
-                to="/auth"
+              <a
+                href="https://wa.me/34625976744"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="liquid-glass-btn inline-flex items-center gap-3 px-10 py-4 text-white font-semibold tracking-wider group"
                 style={{ fontFamily: "Orbitron, sans-serif" }}
               >
                 <Sparkles size={20} className="group-hover:rotate-12 transition-transform duration-300" />
                 <span>GET STARTED</span>
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>

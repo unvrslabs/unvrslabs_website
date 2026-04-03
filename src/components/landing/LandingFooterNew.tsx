@@ -90,13 +90,15 @@ export function LandingFooterNew() {
                 <a href="mailto:emanuele@unvrslabs.dev" className="text-white/60 hover:text-white transition-colors text-sm" style={{ fontFamily: "Orbitron, sans-serif" }}>
                   emanuele@unvrslabs.dev
                 </a>
-                <Link 
-                  to="/auth" 
+                <a
+                  href="https://wa.me/34625976744"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="liquid-glass-pill inline-block w-fit text-white/80 hover:text-white text-xs"
                   style={{ fontFamily: "Orbitron, sans-serif" }}
                 >
-                  Client Portal
-                </Link>
+                  Contact Us
+                </a>
               </div>
             </div>
 

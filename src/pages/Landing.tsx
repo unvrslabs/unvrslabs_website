@@ -18,7 +18,7 @@ const Landing = () => {
       <Helmet>
         <title>UNVRS LABS — AI Integration, Custom Software & Digital Solutions</title>
         <meta name="description" content="UNVRS LABS is a technology studio specializing in AI integration, custom enterprise software, mobile applications, cloud architecture, and digital transformation. We build scalable, innovative solutions that drive business growth." />
-        <link rel="canonical" href="https://unvrsmagic.lovable.app/" />
+        <link rel="canonical" href="https://www.unvrslabs.dev/" />
       </Helmet>
       <main className="bg-black min-h-screen" role="main">
         <LandingNav />

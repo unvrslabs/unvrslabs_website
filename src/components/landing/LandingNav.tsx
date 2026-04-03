@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,7 +9,6 @@ interface LandingNavProps {
 }
 
 export function LandingNav({ showBack = false, backTo }: LandingNavProps) {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -23,7 +22,6 @@ export function LandingNav({ showBack = false, backTo }: LandingNavProps) {
     { label: "MAGIC AI", href: "#works", sectionId: "works" },
     { label: "FOUNDATIONS", href: "#foundations", sectionId: "foundations" },
     { label: "CONTACT", href: "https://wa.me/34625976744", external: true },
-    { label: "LOGIN", href: "/auth", isRoute: true },
   ];
 
   // Scroll spy - track which section is in view
@@ -163,21 +161,6 @@ export function LandingNav({ showBack = false, backTo }: LandingNavProps) {
             onMouseEnter: () => setHoveredIndex(index),
           };
 
-          if (item.isRoute) {
-            return (
-              <Link
-                key={item.label}
-                to={item.href}
-                ref={(el) => (itemRefs.current[index] = el)}
-                className={commonProps.className}
-                style={commonProps.style}
-                onMouseEnter={commonProps.onMouseEnter}
-              >
-                {item.label}
-              </Link>
-            );
-          }
-
           if (item.external) {
             return (
               <a
@@ -255,23 +238,6 @@ export function LandingNav({ showBack = false, backTo }: LandingNavProps) {
             >
               <div className="p-2">
                 {navItems.map((item, index) => {
-                  if (item.isRoute) {
-                    return (
-                      <Link key={item.label} to={item.href} onClick={() => setIsOpen(false)}>
-                        <motion.div
-                          className="block px-4 py-3 text-white/80 rounded-xl"
-                          style={{ fontFamily: "Orbitron, sans-serif" }}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05 }}
-                          whileHover={{ background: "rgba(255, 255, 255, 0.1)" }}
-                        >
-                          {item.label}
-                        </motion.div>
-                      </Link>
-                    );
-                  }
-
                   if (item.external) {
                     return (
                       <motion.a
