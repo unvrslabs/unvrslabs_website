@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Zap, Brain, ScrollText, Bot, BarChart3, Shield, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { Zap, Brain, ScrollText, Bot, BarChart3, Shield, ChevronLeft, ChevronRight, ChevronDown, Video, MousePointer2, Camera, Film, Apple, Monitor, Download } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 interface ProjectFeature {
@@ -857,6 +857,369 @@ function GoItalIACard() {
   );
 }
 
+function UnvrsCaptureCard() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isMobile = useIsMobile();
+  const featuresScrollRef = useRef<HTMLDivElement>(null);
+  const [activeFeaturesIndex, setActiveFeaturesIndex] = useState(0);
+
+  const features = [
+    {
+      icon: <Video className="w-6 h-6" />,
+      title: "Auto-Zoom Intelligence",
+      description: "Smart zoom suggestions based on cursor activity. Recordings stay focused on what matters without manual editing.",
+    },
+    {
+      icon: <MousePointer2 className="w-6 h-6" />,
+      title: "Cursor Polish",
+      description: "Smoothing, motion blur, click bounce and sway. Every cursor movement looks intentional and professional.",
+    },
+    {
+      icon: <Camera className="w-6 h-6" />,
+      title: "Webcam Bubble",
+      description: "Floating webcam overlay with positioning presets, mirror, shadow controls and optional zoom-reactive scaling.",
+    },
+    {
+      icon: <Film className="w-6 h-6" />,
+      title: "Timeline Editor",
+      description: "Drag-and-drop timeline with trims, speed regions, annotations and extra audio tracks. Save projects and resume later.",
+    },
+    {
+      icon: <Brain className="w-6 h-6" />,
+      title: "Styled Backgrounds",
+      description: "Wallpapers, gradients, blur, padding, rounded corners and drop shadows. Frame your demos like a brand.",
+    },
+    {
+      icon: <Download className="w-6 h-6" />,
+      title: "Export MP4 & GIF",
+      description: "One-click export to MP4 (quality selector) or GIF (FPS, loop, size presets). Aspect ratio and dimensions fully controllable.",
+    },
+  ];
+
+  const downloads = [
+    {
+      label: "macOS",
+      sublabel: "Apple Silicon",
+      icon: <Apple className="w-5 h-5" />,
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+    },
+    {
+      label: "macOS",
+      sublabel: "Intel",
+      icon: <Apple className="w-5 h-5" />,
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+    },
+    {
+      label: "Windows",
+      sublabel: "x64",
+      icon: <Monitor className="w-5 h-5" />,
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+    },
+    {
+      label: "Linux",
+      sublabel: "AppImage",
+      icon: <Monitor className="w-5 h-5" />,
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+    },
+  ];
+
+  const handleFeaturesScroll = useCallback(() => {
+    if (!featuresScrollRef.current) return;
+    const container = featuresScrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = 288 + 16;
+    const index = Math.round(scrollLeft / itemWidth);
+    setActiveFeaturesIndex(Math.min(index, features.length - 1));
+  }, [features.length]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8 }}
+      className="w-full"
+    >
+      <div className="liquid-glass-card rounded-3xl overflow-hidden max-w-5xl mx-auto relative">
+        {/* UNVRS Logo Badge */}
+        <div
+          className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full overflow-hidden bg-black"
+          style={{
+            backdropFilter: "blur(20px) saturate(1.3)",
+            WebkitBackdropFilter: "blur(20px) saturate(1.3)",
+            border: "1px solid rgba(168, 85, 247, 0.4)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
+          }}
+        >
+          <img
+            src="/images/unvrs-capture/logo.png"
+            alt="UNVRS Labs"
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* HERO */}
+        <div className="grid md:grid-cols-2 gap-0">
+          <div className="p-8 md:p-12 bg-black/40 flex flex-col justify-center">
+            <h4
+              className="text-lg md:text-xl font-bold text-violet-400 mb-6"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+            >
+              Open-Source Screen Recorder
+            </h4>
+            <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
+              <p>
+                <span className="text-white font-semibold">UNVRS Capture</span> is the desktop app for polished screen recordings.
+                Auto-zoom on cursor activity, smooth motion, webcam bubble overlays, styled backgrounds and a full timeline editor — all in one place, all free.
+              </p>
+              <p>
+                Built for product demos, walkthroughs, tutorials and launch videos.
+                What used to require a motion designer to add zooms, cursor polish or styled frames now happens in a couple of clicks.
+              </p>
+              <p>
+                <span className="text-violet-400 font-semibold">Native capture engines</span> on every OS:
+                ScreenCaptureKit on macOS, Windows Graphics Capture on Windows, native helpers on Linux.
+                Export to MP4 or GIF with full control over quality, FPS and aspect ratio.
+              </p>
+              <p className="text-white/90 italic mt-4">
+                Free forever. Open source.<br />
+                Built by UNVRS Labs.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 md:p-12 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-4">
+              <span
+                className="px-3 py-1 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30"
+                style={{ fontFamily: "Orbitron, sans-serif" }}
+              >
+                Active
+              </span>
+              <span
+                className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/60 border border-white/20"
+                style={{ fontFamily: "Orbitron, sans-serif" }}
+              >
+                2026
+              </span>
+              <span
+                className="px-3 py-1 rounded-full text-xs font-medium bg-violet-500/20 text-violet-300 border border-violet-500/30"
+                style={{ fontFamily: "Orbitron, sans-serif" }}
+              >
+                Free
+              </span>
+            </div>
+
+            <h3
+              className="text-4xl md:text-5xl font-bold text-white mb-2"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+            >
+              UNVRS Capture
+            </h3>
+            <p
+              className="text-lg text-violet-300 mb-4"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+            >
+              Polished Screen Recordings, Free
+            </p>
+            <p className="text-white/70 mb-6 leading-relaxed">
+              Auto-zoom, cursor polish, webcam bubble and timeline editor for macOS, Windows and Linux. One click from recording to export.
+            </p>
+
+            {/* Download Buttons Grid */}
+            <div className="grid grid-cols-2 gap-2">
+              {downloads.map((dl) => (
+                <motion.a
+                  key={`${dl.label}-${dl.sublabel}`}
+                  href={dl.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all"
+                  style={{
+                    fontFamily: "Orbitron, sans-serif",
+                    background: "linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(124, 58, 237, 0.3))",
+                    border: "1px solid rgba(168, 85, 247, 0.4)",
+                  }}
+                >
+                  <span className="text-white/80">{dl.icon}</span>
+                  <div className="flex flex-col items-start leading-tight">
+                    <span className="text-white text-xs font-bold">{dl.label}</span>
+                    <span className="text-white/60 text-[10px]">{dl.sublabel}</span>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Expand/Collapse */}
+        <div className="border-t border-white/10 p-4">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full flex items-center justify-center gap-2 py-3 text-white/60 hover:text-white transition-colors"
+          >
+            <span
+              className="text-sm tracking-[0.1em]"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+            >
+              {isExpanded ? "HIDE DETAILS" : "LEARN MORE"}
+            </span>
+            <motion.div
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ChevronDown size={20} />
+            </motion.div>
+          </button>
+        </div>
+
+        {/* Collapsible Content */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              {/* KEY FEATURES */}
+              <div className="border-t border-white/10 p-8 md:p-12">
+                <h4
+                  className="text-sm tracking-[0.2em] text-white/50 mb-6"
+                  style={{ fontFamily: "Orbitron, sans-serif" }}
+                >
+                  KEY FEATURES
+                </h4>
+                <div
+                  ref={featuresScrollRef}
+                  onScroll={handleFeaturesScroll}
+                  className="overflow-x-auto pb-4 -mx-2 scrollbar-hide"
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                  <div className="flex gap-4 px-2" style={{ minWidth: "max-content" }}>
+                    {features.map((feature, index) => (
+                      <motion.div
+                        key={feature.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors w-72 flex-shrink-0"
+                      >
+                        <div className="text-violet-400 mb-3">{feature.icon}</div>
+                        <h5
+                          className="text-white font-medium mb-2 text-base"
+                          style={{ fontFamily: "Orbitron, sans-serif" }}
+                        >
+                          {feature.title}
+                        </h5>
+                        <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                {isMobile && (
+                  <div className="flex justify-center gap-2 mt-4">
+                    {features.map((_, index) => (
+                      <div
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === activeFeaturesIndex
+                            ? "bg-violet-400 w-4"
+                            : "bg-white/30"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* TECH & STATS */}
+              <div className="border-t border-white/10 p-8 md:p-12">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4
+                      className="text-sm tracking-[0.2em] text-white/50 mb-4"
+                      style={{ fontFamily: "Orbitron, sans-serif" }}
+                    >
+                      TECH STACK
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["Electron", "React", "TypeScript", "Swift", "C++", "FFmpeg", "Pixi.js"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/20 text-white/70"
+                          style={{ fontFamily: "Orbitron, sans-serif" }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4
+                      className="text-sm tracking-[0.2em] text-white/50 mb-4"
+                      style={{ fontFamily: "Orbitron, sans-serif" }}
+                    >
+                      STATS
+                    </h4>
+                    <div className="flex gap-8">
+                      {[
+                        { label: "Platforms", value: "3" },
+                        { label: "Price", value: "Free" },
+                        { label: "License", value: "AGPL" },
+                      ].map((stat) => (
+                        <div key={stat.label}>
+                          <div
+                            className="text-2xl font-bold text-white"
+                            style={{ fontFamily: "Orbitron, sans-serif" }}
+                          >
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-white/50">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* AGPL CREDIT FOOTER */}
+              <div className="border-t border-white/10 px-8 md:px-12 py-4">
+                <p className="text-[10px] text-white/30 text-center leading-relaxed">
+                  Open source under AGPL 3.0 ·{" "}
+                  <a
+                    href="https://github.com/unvrslabs/unvrs-capture"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-violet-300 transition-colors underline"
+                  >
+                    View source on GitHub
+                  </a>
+                  {" "}· Independent fork of the{" "}
+                  <a
+                    href="https://github.com/webadderall/Recordly"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-violet-300 transition-colors underline"
+                  >
+                    Recordly
+                  </a>
+                  {" "}project by webadderall, used in compliance with AGPLv3.
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+}
+
 export function LandingFlagshipProjects() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -904,6 +1267,7 @@ export function LandingFlagshipProjects() {
             <ProjectCard key={project.id} project={project} />
           ))}
           <GoItalIACard />
+          <UnvrsCaptureCard />
         </div>
       </div>
     </section>
