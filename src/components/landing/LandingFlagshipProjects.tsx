@@ -903,25 +903,25 @@ function UnvrsCaptureCard() {
       label: "macOS",
       sublabel: "Apple Silicon",
       icon: <Apple className="w-5 h-5" />,
-      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest/download/UNVRSCapture-arm64.dmg",
     },
     {
       label: "macOS",
       sublabel: "Intel",
       icon: <Apple className="w-5 h-5" />,
-      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest/download/UNVRSCapture-x64.dmg",
     },
     {
       label: "Windows",
       sublabel: "x64",
       icon: <Monitor className="w-5 h-5" />,
-      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest/download/UNVRSCapture-windows-x64.exe",
     },
     {
       label: "Linux",
       sublabel: "AppImage",
       icon: <Monitor className="w-5 h-5" />,
-      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest",
+      href: "https://github.com/unvrslabs/unvrs-capture/releases/latest/download/UNVRSCapture-linux-x64.AppImage",
     },
   ];
 
